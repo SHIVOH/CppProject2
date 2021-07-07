@@ -78,8 +78,8 @@ float LinuxParser::MemoryUtilization() {
     while(std::getline(filestream,line)){
       std::istringstream linestream(line);
       linestream >> key >> value;
-      if(key=="MemT:") MemT=value;
-      else if(key=="MemF:") MemF=value;
+      if(key=="MemTotal:") MemT=value;
+      else if(key=="MemFree:") MemF=value;
     }
     return float((MemT-MemF)/MemT);
   }
